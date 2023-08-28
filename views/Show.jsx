@@ -1,9 +1,20 @@
 import React from 'react'
+import { pokemon } from '../models/pokemon'
+import { capitalize } from '../helperfns'
 
-const Show = () => {
+
+
+const Show = (props) => {
+
+	const name = capitalize(pokemon[props.id].name);
+	const url = `${pokemon[props.id].img}.jpg`;
+
+
 	return (
 		<div>
-			<h1>Show Page</h1>
+			<h1>Gotta Catch Em All</h1>
+			<h2>{ name }</h2>
+			<img src={url} />
 		</div>
 	)
 }
